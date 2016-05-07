@@ -1,4 +1,5 @@
 # jewishdate - joomla module
+v.1.0 <br>
 this module display Jewish date without online api or third party online website.<br>
 Module features:
 <ul>
