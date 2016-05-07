@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.5" client="site" method="upgrade">
+	<name>Jewish Date</name> 
+	<author>Tady Meshesha</author> 
+	<creationDate>May 2016</creationDate> 
+	<copyright>All rights reserved by https://he-il.joomla.com</copyright> 
+	<license>GPL2</license> 
+	<authorEmail>meshesha1@gmail.com</authorEmail> 
+	<authorUrl>http://he-il.joomla.com/jewishdate</authorUrl> 
+	<version>1.0</version> 
+	<description>JEWISHDATE_MODULE_DESC</description>
+	<files>
+		<filename module="mod_jewishdate">mod_jewishdate.php</filename>
+		<filename>mod_jewishdate.xml</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>liveclock.php</filename>
+		<folder>tmpl</folder>
+		<folder>css</folder>
+		<folder>fields</folder>
+		<folder>js</folder>
+	</files>
+    <languages>
+        <language tag="en-GB">en-GB.mod_jewishdate.ini</language>
+		<language tag="en-GB">en-GB.mod_jewishdate.sys.ini</language>
+		<language tag="he-IL">he-IL.mod_jewishdate.ini</language>
+		<language tag="he-IL">he-IL.mod_jewishdate.sys.ini</language>
+    </languages>
+    <!-- Optional parameters -->
+	<config>
+		<fields name="params">
+                <fieldset name="basic" addfieldpath="/modules/mod_jewishdate/fields">
+					<field
+						name="items"
+						type="items"
+						class="chzn-select chzn-sortable"
+						multiple="true"
+						default="clock,jewish"
+						label="JEWISHDATE_STATUS_LABEL"
+						description="JEWISHDATE_STATUS_DESC">
+					</field>
+					<field
+						name="timezoneoffset"
+						type="timezone"
+						default="UTC"
+						label="JEWISHDATE_TIMEZONEOFFSET_LABEL"
+						description="MOD_CURRENTDATETIME_FIELD_OFFSET_DESC">
+						<option value="UTC">JLIB_FORM_VALUE_TIMEZONE_UTC</option>
+					</field>					
+					<field
+						name="clock_source"
+						type="radio"
+						class="btn-group"
+						default="client"
+						label="JEWISHDATE_CLOCK_SOURCE_LABEL"
+						description="JEWISHDATE_CLOCK_SOURCE_DESC">
+						<option value="client">JEWISHDATE_CLOCK_SOURCE_CLIENT</option>
+						<option value="gmt">JEWISHDATE_CLOCK_SOURCE_GMT</option>
+					</field>					
+					<field
+						name="css"
+						type="textarea"
+						class="span6 ltr"
+						rows="10"
+						label="JEWISHDATE_CSS_LABEL"
+						description="JEWISHDATE_CSS_DESC">
+					</field>	
+                </fieldset>
+				<fieldset name="clock" label="JEWISHDATE_CLOCK">
+					<field
+						name="clock_format"
+						type="radio"
+						class="btn-group"
+						default="t24"
+						label="JEWISHDATE_CLOCK_FORMAT_LABEL"
+						description="JEWISHDATE_CLOCK_FORMAT_DESC">
+						<option value="t24">24</option>
+						<option value="t12">12</option>
+					</field>
+					<field
+						name="clock_seconds"
+						type="radio"
+						default="1"
+						class="btn-group"
+						label="JEWISHDATE_DISPLAY_SECONDS_LABEL"
+						description="JEWISHDATE_DISPLAY_SECONDS_DESC">
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+					<field
+						name="leadingZeros"
+						type="radio"
+						default="1"
+						class="btn-group"
+						label="JEWISHDATE_LEADING_ZEROS_LABEL"
+						description="JEWISHDATE_LEADING_ZEROS_DESC">
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+				</fieldset>
+			<fieldset name="gregorian" label="JEWISHDATE_GREGORIAN_DATE">
+				<field
+					name="gregorian_date_language"
+					type="radio"
+					class="btn-group"
+					default="1"
+					label="JEWISHDATE_LANGUAGE_LABEL"
+					description="JEWISHDATE_LANGUAGE_DESC">
+					<option value="1">JEWISHDATE_HEBREW</option>
+					<option value="0">JEWISHDATE_ENGLISH</option>
+				</field>
+				<field
+					name="gregorian_date_format"
+					type="text"
+					size="15"
+					filter="raw"
+					class="ltr"
+					default = "d F Y"
+					label="JGLOBAL_DATE_FORMAT_LABEL"
+					description="JGLOBAL_DATE_FORMAT_DESC">f
+				</field>
+			</fieldset>
+			<fieldset name="jewish" label="JEWISHDATE_JEWISH_DATE">
+				<field
+					name="jewish_date_language"
+					type="radio"
+					class="btn-group"
+					default="1"
+					label="JEWISHDATE_LANGUAGE_LABEL"
+					description="JEWISHDATE_JEWISH_LANGUAGE_DESC">
+					<option value="1">JEWISHDATE_HEBREW</option>
+					<option value="0">JEWISHDATE_ENGLISH</option>
+				</field>
+					<field
+						name="jewish_yaer"
+						type="radio"
+						default="1"
+						class="btn-group"
+						label="JEWISHDATE_DISPLAY_YEAR_LABEL"
+						description="JEWISHDATE_DISPLAY_YEAR_DESC">
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>				
+			</fieldset>	
+			<fieldset name="Day" label="JEWISHDATE_DAY_NAME">
+				<field
+					name="day_language"
+					type="radio"
+					class="btn-group"
+					default="1"
+					label="JEWISHDATE_LANGUAGE_LABEL"
+					description="JEWISHDATE_JEWISH_LANGUAGE_DESC">
+					<option value="1">JEWISHDATE_HEBREW</option>
+					<option value="0">JEWISHDATE_ENGLISH</option>
+				</field>
+				<field
+					name="dayname_format"
+					type="radio"
+					class="btn-group"
+					default="1"
+					label="JEWISHDATE_DAYNAME_FORMAT_LABEL"
+					description="JEWISHDATE_DAYNAME_FORMAT_DESC">
+					<option value="1">JEWISHDATE_DAYNAME_FORMAT_REGULAR</option>
+					<option value="0">JEWISHDATE_DAYNAME_FORMAT_SHORT</option>
+				</field>				
+			</fieldset>				
+			<fieldset name="advanced">
+				<field	
+					name="class_sfx"
+					type="text"
+					label="JEWISHDATE_CLASS_SFX_LABEL"
+					description="JEWISHDATE_CLASS_SFX_DESC" />
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="cache"
+					type="hidden"
+					default="0" />
+			</fieldset>				
+            </fields>
+    </config>
+</extension>
