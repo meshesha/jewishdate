@@ -8,7 +8,7 @@ Module features:
 <li> Show/Hide digital clock.</li>
 <li> Show/Hide current day name in english or hebrew language.</li>
 <li> Show/Hide current Gregorian date.</li>
-<li> Clock sources: client & GMT time based on server time.</li>
+<li> Clock sources: client or GMT time based on server time.</li>
 <li> Ability to ordering above options for view.</li>
 <li> Ability to add custom CSS.</li>
 </ul>
