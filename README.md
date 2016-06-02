@@ -1,4 +1,8 @@
 # jewishdate - joomla module
+v.1.1  <br>
+fix timezone of client source.
+changed the algorithm. 
+ <br>
 v.1.0 <br>
 this module display Jewish date without online api or third party online website.<br>
 Module features:
