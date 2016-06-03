@@ -2,12 +2,12 @@
 <extension type="module" version="3.5" client="site" method="upgrade">
 	<name>Jewish Date</name> 
 	<author>Tady Meshesha</author> 
-	<creationDate>May 2016</creationDate> 
+	<creationDate>15 May 2016</creationDate> 
 	<copyright>All rights reserved by https://he-il.joomla.com</copyright> 
 	<license>GPL2</license> 
 	<authorEmail>meshesha1@gmail.com</authorEmail> 
 	<authorUrl>http://he-il.joomla.com/jewishdate</authorUrl> 
-	<version>1.0</version> 
+	<version>1.1</version> 
 	<description>JEWISHDATE_MODULE_DESC</description>
 	<files>
 		<filename module="mod_jewishdate">mod_jewishdate.php</filename>
@@ -44,7 +44,7 @@
 						type="timezone"
 						default="UTC"
 						label="JEWISHDATE_TIMEZONEOFFSET_LABEL"
-						description="MOD_CURRENTDATETIME_FIELD_OFFSET_DESC">
+						description="JEWISHDATE_TIMEZONEOFFSET_DESC">
 						<option value="UTC">JLIB_FORM_VALUE_TIMEZONE_UTC</option>
 					</field>					
 					<field
@@ -165,11 +165,6 @@
 				</field>				
 			</fieldset>				
 			<fieldset name="advanced">
-				<field	
-					name="class_sfx"
-					type="text"
-					label="JEWISHDATE_CLASS_SFX_LABEL"
-					description="JEWISHDATE_CLASS_SFX_DESC" />
 				<field
 					name="layout"
 					type="modulelayout"
@@ -182,4 +177,7 @@
 			</fieldset>				
             </fields>
     </config>
+	<updateservers>
+		<server type="extension" priority="1" name="Jewish Date">https://raw.githubusercontent.com/meshesha/jewishdate/master/update.xml</server>
+	</updateservers>	
 </extension>
